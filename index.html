@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Интернет магазин</title>
+		<link rel="stylesheet" href="style.css">
+		<script>
+			/*Функция вывода даты*/
+			function myClick(a) {
+				var current_datetime = new Date(a);
+		        var day = current_datetime.getDate();
+		        var month=new Array(12);
+					  month[0]="Января";
+					  month[1]="Февраля";
+					  month[2]="Марта";
+					  month[3]="Апреля";
+					  month[4]="Мая";
+					  month[5]="Июня";
+					  month[6]="Июля";
+					  month[7]="Августа";
+					  month[8]="Сентября";
+					  month[9]="Октября";
+					  month[11]="Декабря";
+		        var year = current_datetime.getFullYear();
+		        var weekday=new Array(7);
+					  weekday[0]="Воскресенье";
+					  weekday[1]="Понедельник";
+					  weekday[2]="Вторник";
+					  weekday[3]="Среда";
+					  weekday[4]="Четверг";
+					  weekday[5]="Пятница";
+					  weekday[6]="Суббота";
+				var oneJan = new Date(current_datetime.getFullYear(),0,1);
+				var numberOfDays = Math.floor((current_datetime - oneJan) / (24 * 60 * 60 * 1000));
+				var numberOFWeek = Math.ceil(( current_datetime.getDay() + 1 + numberOfDays) / 7);
+				
+			    return weekday[current_datetime.getDay()] + ", "+ numberOFWeek+ " неделя " +month[current_datetime.getMonth()]+" "+year+ " года";
+				}
+
+		</script>
+		<script>
+			/*Функция всплывающей формы*/
+			function togglePopup(state) {
+				var popup = document.getElementById('popup-form');								
+				popup.style.display = state;
+			}							
+		</script>
+		
+		<script>
+			/*Функция переключения темы*/
+			function changeTheme(isChecked) {
+			    if (isChecked) {
+			      document.body.setAttribute('dark', '');
+			    } else {
+			      document.body.removeAttribute('dark');
+			    }
+			}
+		</script>
+	</head>
+	<body>
+		<div id="header">			
+			<a href="#note">Ноутбуки</a>
+			<span></span>
+			<a href="#smart">Смартфоны</a>
+			<span></span>
+			<a href="#tele">Телевизоры</a>
+			<label>
+				  	<input type="checkbox" onclick="changeTheme(this.checked)">Включить темную тему
+			</label>			
+		</div>
+		
+			<div id="popup-form">
+				<form>
+					<input type="number" min="1" value="1" placeholder="0" name="Количество"><br>
+					<p><input type="radio" name="drink" value="rad1" checked> Черный<Br>
+					<input type="radio" name="drink" value="rad2"> Белый<Br>
+					<input type="radio" name="drink" value="rad3"> Красный</p>
+					<textarea type="text" placeholder="Комментарий" name="Комментарий" maxlength="2000"></textarea><br>
+					<button id="#popup-form" onclick="alert('Покупка совершена')">Купить</button><span></span>
+					<button id="#popup-form" onclick="togglePopup('none')">Закрыть</button><br>
+				</form>
+			</div>
+				<div id="category">
+				
+					<a name="note"><h1>Ноутбуки</h1></a><br>
+						
+							
+							<div class="container">
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks1.jpg" alt="Ноутбук Huawei MateBook D 16 RLEF-X" width="75%"></div>
+							        <p class="name">Ноутбук Huawei MateBook D 16 RLEF-X</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '1-3-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        <p class="price"></p>
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks2.jpg" alt="Ноутбук HIPER Workbook N15RP" width="75%"></div>
+							        <p class="name">Ноутбук HIPER Workbook N15RP</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '1-4-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks3.jpg" alt="Ноутбук Huawei MateBook D 15 BoD-WDI9" width="75%"></div>
+							        <p class="name">Ноутбук Huawei MateBook D 15 BoD-WDI9</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '4-3-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>						        
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks4.jpg" alt="Ноутбук игровой HIPER G16" width="75%"></div>
+							        <p class="name">Ноутбук игровой HIPER G16</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '6-6-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks5.jpg" alt="Ноутбук игровой MSI GP66 Leopard 11UG-699XRU" width="75%"></div>
+							        <p class="name">Ноутбук игровой MSI GP66 Leopard 11UG-699XRU</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '4-3-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks6.jpg" alt="Ноутбук ASUS A516JP-EJ461" width="75%"></div>
+							        <p class="name">Ноутбук ASUS A516JP-EJ461</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '3-3-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks7.jpg" alt="Ноутбук игровой MSI Sword 15 A12UE-487XRU" width="75%"></div>
+							        <p class="name">Ноутбук игровой MSI Sword 15 A12UE-487XRU</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '8-1-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							     <div class="item">
+							        <div class="img"><img src="images/Notebooks8.jpg" alt="Ноутбук игровой MSI GF63 Thin 11UC-207XRU" width="75%"></div>
+							        <p class="name">Ноутбук игровой MSI GF63 Thin 11UC-207XRU</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '5-9-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks9.jpg" alt="Ноутбук Digma EVE 15 C423" width="75%"></div>
+							        <p class="name">Ноутбук Digma EVE 15 C423</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '1-8-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/Notebooks10.jpg" alt="Ноутбук Digma EVE 15 P417" width="75%"></div>
+							        <p class="name">Ноутбук Digma EVE 15 P417</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '6-4-21'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/notebooks11.jpg" alt="Ноутбук Digma EVE 14 C414, 14.1" width="75%"></div>
+							        <p class="name">Ноутбук Digma EVE 14 C414, 14.1"</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '6-5-21'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							</div>
+					
+
+					<a name="smart"><h1>Смартфоны</h1></a><br>
+					
+							<div class="container">
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone1.jpg" alt="Смартфон Huawei Mate 50 Pro 8/512Gb" width="55%"></div>
+							        <p class="name">Смартфон Huawei Mate 50 Pro 8/512Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '7-3-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone2.jpg" alt="Смартфон Huawei nova 10 SE 8/128Gb" width="55%"></div>
+							        <p class="name">Смартфон Huawei nova 10 SE 8/128Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '5-5-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone3.jpg" alt="Смартфон TECNO Camon 19 6/128Gb" width="55%"></div>
+							        <p class="name">Смартфон TECNO Camon 19 6/128Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '4-7-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone4.jpg" alt="Смартфон vivo V27e 8/256Gb" width="55%"></div>
+							        <p class="name">Смартфон vivo V27e 8/256Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '7-9-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone5.jpg" alt="Смартфон Honor X8a 6/128Gb" width="55%"></div>
+							        <p class="name">Смартфон Honor X8a 6/128Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '3-1-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone6.jpg" alt="Смартфон Honor X7a 4/128Gb" width="55%"></div>
+							        <p class="name">Смартфон Honor X7a 4/128Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '5-2-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone7.jpg" alt="Смартфон Samsung Galaxy S21 FE 5G 8/256Gb" width="55%"></div>
+							        <p class="name">Смартфон Samsung Galaxy S21 FE 5G 8/256Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '4-3-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone8.jpg" alt="Смартфон REALME C25s 4/64Gb" width="55%"></div>
+							        <p class="name">Смартфон REALME C25s 4/64Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '6-5-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone9.jpg" alt="Смартфон REALME 8 6/128Gb" width="55%"></div>
+							        <p class="name">Смартфон REALME 8 6/128Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '7-6-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone10.jpg" alt="Смартфон Samsung Galaxy A73 8/256Gb" width="55%"></div>
+							        <p class="name">Смартфон Samsung Galaxy A73 8/256Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '5-9-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone11.jpg" alt="Смартфон Xiaomi Poco M5 4/128Gb" width="55%"></div>
+							        <p class="name">Смартфон Xiaomi Poco M5 4/128Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '5-9-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone12.jpg" alt="Смартфон Apple iPhone 14 Pro 256Gb" width="55%"></div>
+							        <p class="name">Смартфон Apple iPhone 14 Pro 256Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '5-9-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/smartphone13.jpg" alt="Смартфон Huawei nova Y70 4/128Gb" width="55%"></div>
+							        <p class="name">Смартфон Huawei nova Y70 4/128Gb</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '5-9-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							</div>
+							
+
+					<a name="tele"><h1>Телевизоры</h1></a><br>
+						
+							<div class="container">
+							    <div class="item">
+							        <div class="img"><img src="images/tv1.jpg" alt="Телевизор HAIER Smart TV S1, 4K Ultra HD" width="55%"></div>
+							        <p class="name">50" Телевизор HAIER Smart TV S1, 4K Ultra HD</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '7-7-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv2.jpg" alt="Телевизор Xiaomi Mi TV A2, 4K Ultra HD" width="55%"></div>
+							        <p class="name">43" Телевизор Xiaomi Mi TV A2, 4K Ultra HD</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '9-4-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv3.jpg" alt="Телевизор SunWind SUN-LED32XB200" width="55%"></div>
+							        <p class="name">32" Телевизор SunWind SUN-LED32XB200</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '1-6-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv4.jpg" alt="Телевизор Hyundai H-LED43BU7003" width="55%"></div>
+							        <p class="name">43" Телевизор Hyundai H-LED43BU7003</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '4-3-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv5.jpg" alt="Телевизор Xiaomi Mi TV A2" width="55%"></div>
+							        <p class="name">32" Телевизор Xiaomi Mi TV A2</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '6-7-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv6.jpg" alt="Телевизор Hyundai H-LED32BS5003" width="55%"></div>
+							        <p class="name">32" Телевизор Hyundai H-LED32BS5003</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '6-4-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv7.jpg" alt="Телевизор TCL 43P637" width="55%"></div>
+							        <p class="name">43" Телевизор TCL 43P637</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '1-6-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv8.jpg" alt="Телевизор Hisense 43A6BG" width="55%"></div>
+							        <p class="name">43" Телевизор Hisense 43A6BG</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '4-4-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv9.jpg" alt="50 Телевизор SunWind SUN-LED50XU400" width="55%"></div>
+							        <p class="name">50" Телевизор SunWind SUN-LED50XU400</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '9-7-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv10.jpg" alt="Телевизор TCL 55C635" width="55%"></div>
+							        <p class="name">55" Телевизор TCL 55C635</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '2-2-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv11.jpg" alt="24 Телевизор Hyundai H-LED24FS5002, HD" width="55%"></div>
+							        <p class="name">24" Телевизор Hyundai H-LED24FS5002, HD</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '2-2-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							    <div class="item">
+							        <div class="img"><img src="images/tv12.jpg" alt="65 Телевизор Hisense 65A6BG" width="55%"></div>
+							        <p class="name">65" Телевизор Hisense 65A6BG</p>
+							        <div>
+							        	<script type="text/javascript">
+											var w = '2-2-22'
+										    document.write(myClick(w));
+										</script>
+							        </div>
+							        <button id="#popup-form" onclick="togglePopup('block')">Купить</button><br>
+							        
+							    </div>
+							</div>
+					
+				</div>
+			
+			
+		<div id="bottom">
+			<ul>
+				<li><a href="#note">Ноутбуки</a></li>
+				<li><a href="#smart">Смартфоны</a></li>
+				<li><a href="#tele">Телевизоры</a></li>
+			</ul>
+		</div>
+
+		<button id="scrolltop">Наверх</button>
+		<script>
+			/*Функция кнопки возврата*/
+			var scrollTopBtn = document.querySelector("#scrolltop");
+			window.addEventListener("scroll", function(){
+				if (window.pageYOffset > 20) {
+					scrollTopBtn.style.display = "block";
+				} else {
+					scrollTopBtn.style.display = "none";
+				}
+			})
+			scrollTopBtn.addEventListener("click", function(){
+				window.scrollTo(0, 0);
+			});
+		</script>
+		<div id="footer">
+			Copyright © 2023
+		</div>
+	</body>
+
+
+	
+
+	
+
+</html>
